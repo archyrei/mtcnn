@@ -312,7 +312,7 @@ class MTCNN(object):
             width = int(bounding_box[2] - x)
             height = int(bounding_box[3] - y)
             bounding_boxes.append({
-                'stage_satu': satu,
+                'raw_result': result,
                 'box': [x, y, width, height],
                 'confidence': bounding_box[-1],
                 'keypoints': {
