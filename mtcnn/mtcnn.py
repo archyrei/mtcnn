@@ -295,9 +295,6 @@ class MTCNN(object):
         stages = [self.__stage1, self.__stage2, self.__stage3]
         result = [scales, stage_status]
         
-        #mencoba untuk print stage 1
-        satu = self.__stage1(img, result[0], result[1])
-
         # We pipe here each of the stages
         for stage in stages:
             result = stage(img, result[0], result[1])
@@ -312,7 +309,6 @@ class MTCNN(object):
             width = int(bounding_box[2] - x)
             height = int(bounding_box[3] - y)
             bounding_boxes.append({
-                'satu': satu,
                 'box': [x, y, width, height],
                 'confidence': bounding_box[-1],
                 'keypoints': {
